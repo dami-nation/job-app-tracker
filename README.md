@@ -1,37 +1,74 @@
-# Job Application Tracker (AutoTrack)
+# Job Application Tracker
 
-This is a Python-based automation tool that connects to your Gmail inbox, searches for job application confirmation emails, and logs the job details into a structured CSV file.
+This is a Python automation tool that connects to your Gmail inbox, searches for job application confirmation emails, and logs the job details into a structured CSV file.
 
-## Features
+## What It Does
 
-- Gmail API integration
-- Extracts job title, company, platform, and date applied
-- Logs results into a local CSV (Google Sheets version coming soon)
-- Designed to scale into a full DevOps pipeline later
+- Authenticates with Gmail securely using OAuth2
+- Searches for emails with "application" in the subject after June 1, 2025
+- Extracts:
+  - Subject line
+  - Sender email
+  - Email date
+- Logs each result into `job_applications.csv` locally
 
-## Technologies Used
+## Tech Stack
 
 - Python
-- Gmail API
-- Pandas
-- Google Auth Libraries
+- Gmail API (via Google Cloud Console)
+- Google OAuth2
+- `google-api-python-client`, `pandas`, `csv`
 
 ## How to Run
 
-1. Clone this repo
-2. Install dependencies: `pip install -r requirements.txt`
-3. Set up Gmail API and get your `credentials.json`
-4. Run the script to authenticate and start logging applications
+1. Clone the repo  
+   `git clone https://github.com/your-username/job-app-tracker.git`
 
-## Coming Soon
+2. Set up environment
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+Configure Gmail API
 
-- Google Sheets integration
-- Web dashboard using Streamlit
-- CI/CD with GitHub Actions
-- Docker container support
+Set up a Google Cloud project
+
+Enable Gmail API
+
+Create OAuth credentials for Desktop
+
+Download credentials.json into the project folder
+
+Authenticate once
+
+bash
+Copy
+Edit
+python gmail_auth.py
+Run the parser
+
+bash
+Copy
+Edit
+python parse_and_log.py
+Ignored Files
+credentials.json
+
+token.pickle
+
+job_applications.csv
+
+These are added to .gitignore for security and privacy.
+
+Next Steps
+Filter by platform (LinkedIn, Indeed, etc.)
+
+Push output to Google Sheets
+
+Run automatically (cron or GitHub Actions)
+
+Build a web dashboard
 
 ## Purpose
 
-I built this as part of my DevOps learning journey. It's a practical automation tool that also serves as a hands-on portfolio project.
-
-An automated script that logs job application confirmation emails to CSV or Google Sheets
+Built to track job applications and serve as the foundation for a full DevOps automation pipeline in my personal lab environment.
