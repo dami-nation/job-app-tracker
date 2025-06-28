@@ -5,7 +5,7 @@ This is a Python automation tool that connects to your Gmail inbox, searches for
 ## What It Does
 
 - Authenticates with Gmail securely using OAuth2
-- Searches for emails with "application" in the subject after June 1, 2025
+- Searches for emails with "application" in the subject after June 1, 2025 (edit the parse_and_log.py file to fit your search)
 - Extracts:
   - Subject line
   - Sender email
