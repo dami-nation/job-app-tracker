@@ -29,9 +29,12 @@ This is a Python automation tool that connects to your Gmail inbox, searches for
    cd job-app-tracker
 
 2. Create and activate a virtual environment
+
+
 On Mac/Linux:
    python3 -m venv venv
    source venv/bin/activate
+
 
 On Windows:
    python -m venv venv
