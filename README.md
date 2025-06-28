@@ -22,7 +22,7 @@ This is a Python automation tool that connects to your Gmail inbox, searches for
 ## How to Run
 
 1. Clone the repo  
-   `git clone https://github.com/your-username/job-app-tracker.git`
+   `git clone https://github.com/dami-nation/job-app-tracker.git`
 
 2. Set up environment
    ```bash
